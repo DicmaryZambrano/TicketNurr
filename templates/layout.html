@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NURR - Tickets</title>
+    <meta name="author" content="ULA">
+    <meta name="description" content="Aplicacion para la venta de tickets de la linea de buses NURR">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter&family=PT+Sans&display=swap" rel="stylesheet">
+    <meta property="og:title" content="Pagina de venta tickets nurr">
+    <meta property="og:type" content="website">
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo-link" draggable="false">
+        <picture>
+            <source media="(max-width: 900px)" srcset="images/logo_ula_pequeño.png" width="1" height="1">
+            <img class="logo" src="images/logo_ula_grande.png" alt="Valera Chamber of Commerce Logo"
+            draggable="false" width="4" height="1">
+        </picture>
+    </a>
+  </header>
+  {% block body %}
+  {% endblock %}
+</body>
+</html>

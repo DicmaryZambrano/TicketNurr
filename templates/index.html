@@ -1,0 +1,70 @@
+{% extends 'layout.html'%}
+
+{% block body %}
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+  <p>{{message}}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<div class="form-container">
+  <h2>Nuevo Ticket</h2>
+  <form action="/purchase_ticket" method="POST" oninput="actualizarTotal()">
+    <fieldset>
+      <legend>Informacion Personal</legend>
+      <label for="nombre_completo">Nombre Completo*
+        <input type="text" id="nombre_completo" name="nombre_completo" required>
+      </label>
+
+      <legend>Tipo de Persona*</legend>
+      <label><input type="radio" name="persona" value="estudiante" required> Estudiante</label>
+      <label><input type="radio" name="persona" value="docente" required> Docente</label>
+
+      <legend>Ruta*</legend>
+      <label><input type="radio" name="ruta" value="Trujillo" required> Trujillo</label>
+      <label><input type="radio" name="ruta" value="Valera" required> Valera</label>
+
+      <legend>Cantidad de tickets*</legend>
+      <label for="cantidad_tickets">
+        <input type="number" id="cantidad_tickets" name="cantidad_tickets" min="1" max="20" value="1" required>
+      </label>
+    </fieldset>
+
+    <div>
+      <label>Total a Pagar:</label>
+      <span id="totalPrecio">0</span> Bs.
+    </div>
+    <input type="submit" value="Crear Ticket">
+  </form>
+</div>
+
+<!-- <table>
+  <thead>
+    <tr>
+      <td>Nombre</td>
+      <td>Telefono</td>
+      <td>Email</td>
+      <td>Operaciones</td>
+    </tr>
+  </thead>
+  <tbody>
+    {%for contacto in contactos%}
+      <tr>
+        <td>{{ contacto.1 }}</td>
+        <td>{{ contacto.2 }}</td>
+        <td>{{ contacto.3 }}</td>
+        <td>
+          <a href='/edit/{{contacto.0}}'>Editar</a>
+          <a href='/delete/{{contacto.0}}'>Eliminar</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table> -->
+
+<script src="scripts/calcularPrecio.js"></script>
+
+{% endblock %}
